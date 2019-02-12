@@ -20,6 +20,12 @@ public class MyMvcConfig implements WebMvcConfigurer {
         registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**")
                 //设置不拦截的请求url
                 .excludePathPatterns();
+        
+       //第二个拦截器  可以注册多个                                                                    //添加拦截的请求url（原来是/user/api/order/**）
+       //registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**")
+           //设置不拦截的请求url
+          //  .excludePathPatterns();
+        
         //注意：静态页面不需要处理，springboot已经处理了
         WebMvcConfigurer.super.addInterceptors(registry);
     }
